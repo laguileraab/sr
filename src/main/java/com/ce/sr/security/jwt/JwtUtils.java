@@ -4,7 +4,7 @@ import java.util.Date;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
-import com.ce.sr.services.UserDetailsImpl;
+import com.ce.sr.security.services.UserDetailsImpl;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;

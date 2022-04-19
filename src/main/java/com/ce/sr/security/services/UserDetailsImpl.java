@@ -1,4 +1,4 @@
-package com.ce.sr.services;
+package com.ce.sr.security.services;
 
 import java.util.Collection;
 import java.util.List;

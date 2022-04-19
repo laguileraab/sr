@@ -9,19 +9,20 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "com.ce.sr.repository")
-public class MongoConfig extends AbstractMongoClientConfiguration {
-    @Autowired
-    private MappingMongoConverter mongoConverter;
+//@EnableMongoRepositories
+public class MongoConfig //extends AbstractMongoClientConfiguration 
+{
+    // @Autowired
+    // private MappingMongoConverter mongoConverter;
 
-    @Bean
-    public GridFsTemplate gridFsTemplate() throws Exception {
-        return new GridFsTemplate(mongoDbFactory(), mongoConverter);
-    }
+    // @Bean
+    // public GridFsTemplate gridFsTemplate() throws Exception {
+    //     return new GridFsTemplate(mongoDbFactory(), mongoConverter);
+    // }
 
-    @Override
-    protected String getDatabaseName() {
-        return "upload";
-    }
+    // @Override
+    // protected String getDatabaseName() {
+    //     return "upload";
+    // }
 }
 

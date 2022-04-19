@@ -14,7 +14,7 @@ import com.ce.sr.models.ERole;
 import com.ce.sr.models.Role;
 import com.ce.sr.models.User;
 import com.ce.sr.security.jwt.JwtUtils;
-import com.ce.sr.services.UserDetailsImpl;
+import com.ce.sr.security.services.UserDetailsImpl;
 import com.ce.sr.repository.RoleRepository;
 import com.ce.sr.repository.UserRepository;
 
