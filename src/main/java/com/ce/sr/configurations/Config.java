@@ -10,6 +10,9 @@ public class Config implements WebServerFactoryCustomizer<ConfigurableServletWeb
         if (System.getenv("PORT") != null) {
             factory.setPort(Integer.valueOf(System.getenv("PORT")));
         }
+        else{
+            factory.setPort(80);
+        }
         factory.setContextPath("");
     }
 }
