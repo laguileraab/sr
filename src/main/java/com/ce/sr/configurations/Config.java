@@ -1,12 +1,14 @@
 package com.ce.sr.configurations;
 
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
-import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.stereotype.Component;
 
-public class Config implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
+@Component
+public class Config implements WebServerFactoryCustomizer<TomcatServletWebServerFactory> {
 
     @Override
-    public void customize(ConfigurableServletWebServerFactory factory) {
+    public void customize(TomcatServletWebServerFactory factory) {
         if (System.getenv("PORT") != null) {
             factory.setPort(Integer.valueOf(System.getenv("PORT")));
         }
