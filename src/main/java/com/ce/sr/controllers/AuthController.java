@@ -71,10 +71,10 @@ public class AuthController {
                             userDetails.getEmail(),
                             roles));
         } catch (BadCredentialsException bad) {
-            AuthController.log.info(loginRequest.getUsername() + " Datos incorrectos en el logueo");
+            AuthController.log.info("Datos incorrectos en el logueo " + loginRequest.getUsername());
             return ResponseEntity
             .status(HttpStatus.FORBIDDEN)
-            .body(loginRequest.getUsername() + " Datos incorrectos en el logueo");
+            .body("Datos incorrectos en el logueo " + loginRequest.getUsername());
         }
     }
 
