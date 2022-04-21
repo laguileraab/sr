@@ -14,7 +14,7 @@ import com.ce.sr.models.ERole;
 import com.ce.sr.models.Role;
 import com.ce.sr.models.User;
 import com.ce.sr.security.jwt.JwtUtils;
-import com.ce.sr.security.services.UserDetailsImpl;
+import com.ce.sr.services.UserDetailsImpl;
 import com.ce.sr.repository.RoleRepository;
 import com.ce.sr.repository.UserRepository;
 
@@ -100,15 +100,15 @@ public class AuthController {
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
-                switch (role) {
-                    /*case "admin":
+                switch (role.toLowerCase().trim()) {
+                    case "admin":
                         Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol"));
+                                .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol " + role));
                         roles.add(adminRole);
-                        break;*/
+                        break;
                     default:
                         Role opRole = roleRepository.findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol"));
+                                .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol " + role));
                         roles.add(opRole);
                 }
             });
