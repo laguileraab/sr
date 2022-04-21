@@ -1,11 +1,11 @@
 package com.ce.sr.security.jwt;
 
 import java.util.Date;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 import com.ce.sr.services.UserDetailsImpl;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseCookie;
 import org.springframework.stereotype.Component;
@@ -36,7 +36,7 @@ public class JwtUtils {
     public ResponseCookie generateJwtCookie(UserDetailsImpl userPrincipal) {
         String jwt = generateTokenFromUsername(userPrincipal.getUsername());
         return ResponseCookie.from(jwtCookie, jwt).path("/").maxAge(86400).httpOnly(true)
-        .build();
+                .build();
     }
 
     public ResponseCookie getCleanJwtCookie() {
@@ -52,15 +52,15 @@ public class JwtUtils {
             Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
             return true;
         } catch (SignatureException e) {
-            JwtUtils.log.error("Firma JWT inválida: {}", e.getMessage());
+            JwtUtils.log.error("Invalid JWT signature: {}", e.getMessage());
         } catch (MalformedJwtException e) {
-            JwtUtils.log.error("JWT token inválido: {}", e.getMessage());
+            JwtUtils.log.error("Invalid JWT token: {}", e.getMessage());
         } catch (ExpiredJwtException e) {
-            JwtUtils.log.error("El token JWT ha expirado: {}", e.getMessage());
+            JwtUtils.log.error("JWT token is expired: {}", e.getMessage());
         } catch (UnsupportedJwtException e) {
-            JwtUtils.log.error("El token JWT no está soportado: {}", e.getMessage());
+            JwtUtils.log.error("JWT token is unsupported: {}", e.getMessage());
         } catch (IllegalArgumentException e) {
-            JwtUtils.log.info("La cadena de texto de JWT claims está vacía: {}", e.getMessage());
+            JwtUtils.log.info("JWT claims string is empty: {}", e.getMessage());
         }
         return false;
     }

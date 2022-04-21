@@ -11,8 +11,7 @@ public class Config implements WebServerFactoryCustomizer<TomcatServletWebServer
     public void customize(TomcatServletWebServerFactory factory) {
         if (System.getenv("PORT") != null) {
             factory.setPort(Integer.valueOf(System.getenv("PORT")));
-        }
-        else{
+        } else {
             factory.setPort(80);
         }
         factory.setContextPath("");

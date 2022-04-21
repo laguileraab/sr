@@ -55,7 +55,7 @@ public class FileService {
 
         FileUpload fileUpload = new FileUpload();
         List<FileUpload> fileUploads = new ArrayList<>();
-        gridFSFiles.forEach((gridFSFile) -> {
+        gridFSFiles.forEach(gridFSFile -> {
             if (gridFSFile != null && gridFSFile.getMetadata() != null) {
                 fileUpload.setId(gridFSFile.getObjectId().toString());
                 fileUpload.setFilename(gridFSFile.getFilename());

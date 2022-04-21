@@ -15,6 +15,7 @@ import com.ce.sr.models.Role;
 import com.ce.sr.models.User;
 import com.ce.sr.security.jwt.JwtUtils;
 import com.ce.sr.services.UserDetailsImpl;
+import com.ce.sr.utils.Constants;
 import com.ce.sr.repository.RoleRepository;
 import com.ce.sr.repository.UserRepository;
 
@@ -27,6 +28,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -62,31 +64,29 @@ public class AuthController {
             UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
             ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
             List<String> roles = userDetails.getAuthorities().stream()
-                    .map(item -> item.getAuthority())
+                    .map(GrantedAuthority::getAuthority)
                     .collect(Collectors.toList());
-            AuthController.log.debug(loginRequest.getUsername() + " Logueo exitoso");
+            AuthController.log.debug("Successfully logged in " + loginRequest.getUsername());
             return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
-                    .body(new UserInfoResponse(userDetails.getId(),
-                            userDetails.getUsername(),
-                            userDetails.getEmail(),
+                    .body(new UserInfoResponse(userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(),
                             roles));
         } catch (BadCredentialsException bad) {
-            AuthController.log.info("Datos incorrectos en el logueo " + loginRequest.getUsername());
+            AuthController.log.info("Bad credentials " + loginRequest.getUsername());
             return ResponseEntity
-            .status(HttpStatus.FORBIDDEN)
-            .body("Datos incorrectos en el logueo " + loginRequest.getUsername());
+                    .status(HttpStatus.FORBIDDEN)
+                    .body("Bad credentials " + loginRequest.getUsername());
         }
     }
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
+        if (signUpRequest.getUsername() != null && userRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity.badRequest()
-                    .body(new MessageResponse(HttpStatus.CONFLICT, "El usuario ya existe!"));
+                    .body(new MessageResponse(HttpStatus.CONFLICT, "Username exists!"));
         }
-        if (userRepository.existsByEmail(signUpRequest.getEmail())) {
+        if (signUpRequest.getUsername() != null && userRepository.existsByEmail(signUpRequest.getEmail())) {
             return ResponseEntity.badRequest()
-                    .body(new MessageResponse(HttpStatus.CONFLICT, "El correo ya existe!"));
+                    .body(new MessageResponse(HttpStatus.CONFLICT, "Email exists!"));
         }
         // Create new user's account
         User user = new User(signUpRequest.getUsername(),
@@ -96,32 +96,30 @@ public class AuthController {
         Set<Role> roles = new HashSet<>();
         if (strRoles == null) {
             Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-                    .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol"));
+                    .orElseThrow(() -> new RuntimeException("Role not found"));
             roles.add(userRole);
         } else {
             strRoles.forEach(role -> {
-                switch (role.toLowerCase().trim()) {
-                    case "admin":
-                        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-                                .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol " + role));
-                        roles.add(adminRole);
-                        break;
-                    default:
-                        Role opRole = roleRepository.findByName(ERole.ROLE_USER)
-                                .orElseThrow(() -> new RuntimeException("No se ha podido encontrar ese rol " + role));
-                        roles.add(opRole);
+                if (role.toLowerCase().trim().equals(Constants.ADMIN)) {
+                    Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+                            .orElseThrow(() -> new RuntimeException("Role " + role + " not found"));
+                    roles.add(adminRole);
+                } else {
+                    Role opRole = roleRepository.findByName(ERole.ROLE_USER)
+                            .orElseThrow(() -> new RuntimeException("Role " + role + " not found"));
+                    roles.add(opRole);
                 }
             });
         }
         user.setRoles(roles);
         userRepository.save(user);
-        return ResponseEntity.ok(new MessageResponse(HttpStatus.CONFLICT, "User registered successfully!"));
+        return ResponseEntity.ok(new MessageResponse(HttpStatus.OK, "User registered successfully!"));
     }
 
     @PostMapping("/signout")
     public ResponseEntity<MessageResponse> logoutUser() {
         ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
-                .body(new MessageResponse(HttpStatus.OK, "You've been signed out!"));
+                .body(new MessageResponse(HttpStatus.OK, "You've been logout!"));
     }
 }
