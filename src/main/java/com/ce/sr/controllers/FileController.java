@@ -44,7 +44,7 @@ public class FileController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ByteArrayResource> download(@PathVariable String id)
-            throws IOException, FileForbiddenException {
+            throws IOException, FileForbiddenException, ResourceNotFoundException {
         FileController.log.info("Downloading file {}...", id);
         FileUpload fileUpload = fileService.downloadFile(id);
         return ResponseEntity.ok()
