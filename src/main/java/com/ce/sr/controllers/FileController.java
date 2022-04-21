@@ -7,6 +7,7 @@ import com.ce.sr.models.FileUpload;
 import com.ce.sr.payload.response.MessageResponse;
 import com.ce.sr.services.FileForbiddenException;
 import com.ce.sr.services.FileService;
+import com.ce.sr.services.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -44,8 +45,8 @@ public class FileController {
     @GetMapping("/{id}")
     public ResponseEntity<ByteArrayResource> download(@PathVariable String id)
             throws IOException, FileForbiddenException {
+        FileController.log.info("Downloading file {}...", id);
         FileUpload fileUpload = fileService.downloadFile(id);
-        FileController.log.info("Downloading file {id}...");
         return ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType(fileUpload.getFileType()))
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileUpload.getFilename() + "\"")
@@ -57,15 +58,15 @@ public class FileController {
     public ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file) throws IOException {
         FileController.log.info("Uploading file...");
         fileService.addFile(file);
-        FileController.log.info("File " + file.getOriginalFilename() + " uploaded successfully");
+        FileController.log.info("File {} uploaded successfully", file.getOriginalFilename());
         return ResponseEntity
                 .ok(new MessageResponse(HttpStatus.CREATED,
                         "File " + file.getOriginalFilename() + " uploaded successfully"));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<MessageResponse> deleteFile(@PathVariable String id) throws FileForbiddenException {
-        FileController.log.info("Deleting file {id}...");
+    public ResponseEntity<MessageResponse> deleteFile(@PathVariable String id) throws FileForbiddenException, ResourceNotFoundException {
+        FileController.log.info("Deleting file {}...", id);
         return ResponseEntity
                 .ok(new MessageResponse(HttpStatus.OK, fileService.deleteFile(id)));
     }
