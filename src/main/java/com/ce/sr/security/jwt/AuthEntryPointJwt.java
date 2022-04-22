@@ -12,9 +12,11 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 
+import lombok.extern.log4j.Log4j2;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@Log4j2
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {
 
@@ -22,13 +24,13 @@ public class AuthEntryPointJwt implements AuthenticationEntryPoint {
     public void commence(HttpServletRequest request, HttpServletResponse response,
             AuthenticationException authException)
             throws IOException, ServletException {
-        //logger.error("Sin autorización: {}", authException.getMessage());
-        //logger.error("Sin autorización: {}", authException.getMessage());
+        AuthEntryPointJwt.log.error("No authorization: {}", authException.getMessage());
+        AuthEntryPointJwt.log.error("No authorization: {}", authException.getMessage());
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         final Map<String, Object> body = new HashMap<>();
         body.put("status", HttpServletResponse.SC_UNAUTHORIZED);
-        body.put("error", "Sin autorización");
+        body.put("error", "No authorization");
         body.put("message", authException.getMessage());
         body.put("path", request.getServletPath());
         final ObjectMapper mapper = new ObjectMapper();

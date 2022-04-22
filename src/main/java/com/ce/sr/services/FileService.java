@@ -1,6 +1,6 @@
 package com.ce.sr.services;
 
-import com.ce.sr.models.FileUpload;
+import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.utils.Constants;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -10,16 +10,22 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.gridfs.GridFsCriteria;
 import org.springframework.data.mongodb.gridfs.GridFsOperations;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import lombok.extern.log4j.Log4j2;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
+@Log4j2
 @Service
 public class FileService {
 
@@ -33,14 +39,11 @@ public class FileService {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
-
         DBObject metadata = new BasicDBObject();
         metadata.put(Constants.FILESIZE, upload.getSize());
         metadata.put(Constants.OWNER, userDetails.getId());
-
         Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
                 metadata);
-
         return fileID.toString();
     }
 
@@ -48,14 +51,12 @@ public class FileService {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
-
         GridFSFindIterable gridFSFiles = template.find(new Query(
-                Criteria.where(Constants.METADATAOWNER)
+                GridFsCriteria.whereMetaData(Constants.OWNER)
                         .is(userDetails.getId())));
-
         FileUpload fileUpload = new FileUpload();
         List<FileUpload> fileUploads = new ArrayList<>();
-        gridFSFiles.forEach((gridFSFile) -> {
+        gridFSFiles.forEach(gridFSFile -> {
             if (gridFSFile != null && gridFSFile.getMetadata() != null) {
                 fileUpload.setId(gridFSFile.getObjectId().toString());
                 fileUpload.setFilename(gridFSFile.getFilename());
@@ -64,44 +65,59 @@ public class FileService {
                 fileUploads.add(fileUpload);
             }
         });
-
+        FileService.log.info("Displaying list of files");
         return fileUploads;
     }
 
-    public FileUpload downloadFile(String id) throws IOException, FileForbiddenException {
+    public FileUpload downloadFile(String id) throws IOException, FileForbiddenException, ResourceNotFoundException {
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
-
-        GridFSFile gridFSFile = template.findOne(new Query(Criteria.where(Constants.ID).is(id)));
-
+        Optional<GridFSFile> gridFSFileOptional = Optional
+                .ofNullable(template.findOne(new Query(Criteria.where(Constants.ID).is(id))));
         FileUpload fileUpload = new FileUpload();
-
-        if (gridFSFile.getMetadata() != null) {
-            fileUpload.setFilename(gridFSFile.getFilename());
-
-            fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
-
-            fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
-            if (userDetails.getId().equals(gridFSFile.getMetadata().get(Constants.OWNER).toString())) {
-                fileUpload.setFile(IOUtils.toByteArray(operations.getResource(gridFSFile).getInputStream()));
-            } else {
-                throw new FileForbiddenException("You don't have access to this file " + id);
+        try {
+            GridFSFile gridFSFile = gridFSFileOptional.get();
+            if (gridFSFile.getMetadata() != null) {
+                fileUpload.setFilename(gridFSFile.getFilename());
+                fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
+                fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
+                if (userDetails.getId().equals(gridFSFile.getMetadata().get(Constants.OWNER).toString())) {
+                    fileUpload.setFile(IOUtils.toByteArray(operations.getResource(gridFSFile).getInputStream()));
+                } else {
+                    FileService.log.error("Attempt to download file {} from user {}",
+                            fileUpload.getFilename(), userDetails.getUsername());
+                    throw new FileForbiddenException("You don't have access to this file " + id);
+                }
             }
+            FileService.log.info("File {} downloaded", fileUpload.getFilename());
+        } catch (NoSuchElementException npe) {
+            FileService.log.error("File {} not found", id);
+            throw new ResourceNotFoundException("File with id " + id + " not found");
         }
-
         return fileUpload;
     }
 
-    public String deleteFile(String id) throws FileForbiddenException {
+    public String deleteFile(String id) throws FileForbiddenException, ResourceNotFoundException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
-        GridFSFile gridFSFile = template.findOne(new Query(Criteria.where(Constants.ID).is(id)));
-
-        if (userDetails.getId().equals(gridFSFile.getMetadata().get(Constants.OWNER).toString())) {
-            template.delete(new Query(Criteria.where(Constants.ID).is(userDetails.getId())));
-        } else {
-            throw new FileForbiddenException("You don't have access to this file " + id);
+        Optional<GridFSFile> gridFSFileOptional = Optional
+                .ofNullable(template.findOne(new Query(Criteria.where(Constants.ID).is(id))));
+        try {
+            GridFSFile gridFSFile = gridFSFileOptional.get();
+            if (userDetails.getId().equals(gridFSFile.getMetadata().get(Constants.OWNER).toString())) {
+                Query query = new Query(Criteria.where(Constants.ID).is(id));
+                template.delete(query);
+                FileService.log.info("File {} deleted", id);
+            } else {
+                FileService.log.error("Attempt to delete file {} with id {} from user {}",
+                        gridFSFile.getFilename(), gridFSFile.getObjectId().toString(),
+                        userDetails.getUsername());
+                throw new FileForbiddenException("You don't have access to this file " + id);
+            }
+        } catch (NoSuchElementException npe) {
+            FileService.log.error("File {} not found", id);
+            throw new ResourceNotFoundException("File with id " + id + " not found");
         }
         return "File " + id + " was deleted successfully";
     }

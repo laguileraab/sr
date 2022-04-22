@@ -1,4 +1,5 @@
 package com.ce.sr.security.jwt;
+
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -39,13 +40,12 @@ public class AuthTokenFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
         } catch (Exception e) {
-            logger.error("Datos incorrectos en el logueo: {}", e);
+            logger.error("Bad credentials: {}", e);
         }
         filterChain.doFilter(request, response);
     }
 
     private String parseJwt(HttpServletRequest request) {
-        String jwt = jwtUtils.getJwtFromCookies(request);
-        return jwt;
+        return jwtUtils.getJwtFromCookies(request);
     }
 }

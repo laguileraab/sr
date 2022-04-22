@@ -1,4 +1,4 @@
-package com.ce.sr.models;
+package com.ce.sr.payload.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
