@@ -1,5 +1,7 @@
 package com.ce.sr.services;
 
+import com.ce.sr.exceptions.FileForbiddenException;
+import com.ce.sr.exceptions.ResourceNotFoundException;
 import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.utils.Constants;
 import com.mongodb.BasicDBObject;

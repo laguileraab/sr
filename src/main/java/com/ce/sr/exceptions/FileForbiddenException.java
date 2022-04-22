@@ -1,4 +1,4 @@
-package com.ce.sr.services;
+package com.ce.sr.exceptions;
 
 public class FileForbiddenException extends Exception{
 

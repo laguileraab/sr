@@ -1,0 +1,20 @@
+2022-04-21 20:28:31 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-21 20:28:31 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 20236 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-21 20:28:31 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-21 20:28:33 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-21 20:28:34 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 89 ms. Found 2 MongoDB repository interfaces.
+2022-04-21 20:28:35 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-21 20:28:35 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-21 20:28:35 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-21 20:28:35 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-21 20:28:36 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-21 20:28:36 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4403 ms
+2022-04-21 20:28:37 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-21 20:28:37 [cluster-ClusterId{value='6261f6b51c8758392079ed43', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:212}] to localhost:27017
+2022-04-21 20:28:37 [cluster-rtt-ClusterId{value='6261f6b51c8758392079ed43', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:211}] to localhost:27017
+2022-04-21 20:28:37 [cluster-ClusterId{value='6261f6b51c8758392079ed43', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=48425400}
+2022-04-21 20:28:41 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-21 20:28:41 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-21 20:28:43 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-21 20:28:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-21 20:28:44 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 13.241 seconds (JVM running for 15.019)

@@ -3,11 +3,11 @@ package com.ce.sr.controllers;
 import java.io.IOException;
 import java.util.List;
 
+import com.ce.sr.exceptions.FileForbiddenException;
+import com.ce.sr.exceptions.ResourceNotFoundException;
 import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.payload.response.MessageResponse;
-import com.ce.sr.services.FileForbiddenException;
 import com.ce.sr.services.FileService;
-import com.ce.sr.services.ResourceNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
