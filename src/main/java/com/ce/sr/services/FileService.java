@@ -8,6 +8,7 @@ import com.mongodb.client.gridfs.GridFSFindIterable;
 import com.mongodb.client.gridfs.model.GridFSFile;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsCriteria;
@@ -47,6 +48,7 @@ public class FileService {
         return fileID.toString();
     }
 
+    @Cacheable("files")
     public List<FileUpload> getMetadataFilesFromUser() {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
@@ -69,6 +71,7 @@ public class FileService {
         return fileUploads;
     }
 
+    @Cacheable("file")
     public FileUpload downloadFile(String id) throws IOException, FileForbiddenException, ResourceNotFoundException {
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
@@ -97,6 +100,7 @@ public class FileService {
         return fileUpload;
     }
 
+    @Cacheable("dFile")
     public String deleteFile(String id) throws FileForbiddenException, ResourceNotFoundException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
