@@ -113,12 +113,18 @@ public class AuthController {
         }
         user.setRoles(roles);
         userRepository.save(user);
+        AuthController.log.info("User {} was created", user.getUsername());
         return ResponseEntity.ok(new MessageResponse(HttpStatus.OK, "User registered successfully!"));
     }
 
     @PostMapping("/signout")
     public ResponseEntity<MessageResponse> logoutUser() {
+        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal();
         ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
+        if (userDetails != null) {
+            AuthController.log.info("User {} logout", userDetails.getUsername());
+        }
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
                 .body(new MessageResponse(HttpStatus.OK, "You've been logout!"));
     }

@@ -3,7 +3,7 @@ package com.ce.sr.controllers;
 import java.io.IOException;
 import java.util.List;
 
-import com.ce.sr.models.FileUpload;
+import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.payload.response.MessageResponse;
 import com.ce.sr.services.FileForbiddenException;
 import com.ce.sr.services.FileService;

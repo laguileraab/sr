@@ -1,6 +1,6 @@
 package com.ce.sr.services;
 
-import com.ce.sr.models.FileUpload;
+import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.utils.Constants;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
