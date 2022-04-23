@@ -9,6 +9,7 @@ import com.mongodb.DBObject;
 import com.mongodb.client.gridfs.GridFSFindIterable;
 import com.mongodb.client.gridfs.model.GridFSFile;
 import org.apache.commons.io.IOUtils;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -26,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import lombok.extern.log4j.Log4j2;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -41,21 +43,20 @@ public class FileService {
     @Autowired
     private GridFsOperations operations;
     
-    public void addFile(MultipartFile upload) throws IOException {
+    public String addFile(InputStream file, Long size, String name, String contentType) throws IOException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
         DBObject metadata = new BasicDBObject();
-        metadata.put(Constants.FILESIZE, upload.getSize());
+        metadata.put(Constants.FILESIZE, size);
         metadata.put(Constants.OWNER, userDetails.getId());
-        uploadFile(upload, metadata);
-        //return Object fileID = fileID.toString();
+        return uploadFile(file, metadata, name, contentType).toString();
     }
 
     @Async
     @CachePut("file")
-    public void uploadFile(MultipartFile upload, DBObject metadata) throws IOException{
-        template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
+    public ObjectId uploadFile(InputStream file, DBObject metadata, String name, String contentType) throws IOException{
+        return template.store(file, name, contentType,
                 metadata);
     }
 
@@ -72,14 +73,13 @@ public class FileService {
             if (gridFSFile != null && gridFSFile.getMetadata() != null) {
                 FileUpload fileUpload = new FileUpload();
                 fileUpload.setId(gridFSFile.getObjectId().toString());
-                FileService.log.info("{}",gridFSFile.getFilename());
                 fileUpload.setFilename(gridFSFile.getFilename());
                 fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
                 fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
                 fileUploads.add(fileUpload);
             }
         });
-        FileService.log.info("Displaying list of files");
+        FileService.log.info("Displaying list of files for user {}", userDetails.getUsername());
         return fileUploads;
     }
 

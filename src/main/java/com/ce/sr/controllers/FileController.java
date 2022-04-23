@@ -10,6 +10,7 @@ import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.payload.response.MessageResponse;
 import com.ce.sr.services.FileService;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -58,9 +59,11 @@ public class FileController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public synchronized ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file) throws IOException {
+    public synchronized ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file)
+            throws IOException {
         FileController.log.info("Uploading file...");
-        fileService.addFile(file);
+        fileService.addFile(file.getInputStream(), file.getSize(), file.getOriginalFilename(),
+                file.getContentType());
         return ResponseEntity
                 .ok(new MessageResponse(HttpStatus.CREATED,
                         "File " + file.getOriginalFilename() + " uploaded successfully"));
