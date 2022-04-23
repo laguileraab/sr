@@ -2,6 +2,7 @@ package com.ce.sr.controllers;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.Future;
 
 import com.ce.sr.exceptions.FileForbiddenException;
 import com.ce.sr.exceptions.ResourceNotFoundException;
@@ -15,6 +16,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,17 +58,17 @@ public class FileController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file) throws IOException {
+    public synchronized ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file) throws IOException {
         FileController.log.info("Uploading file...");
         fileService.addFile(file);
-        FileController.log.info("File {} uploaded successfully", file.getOriginalFilename());
         return ResponseEntity
                 .ok(new MessageResponse(HttpStatus.CREATED,
                         "File " + file.getOriginalFilename() + " uploaded successfully"));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<MessageResponse> deleteFile(@PathVariable String id) throws FileForbiddenException, ResourceNotFoundException {
+    public ResponseEntity<MessageResponse> deleteFile(@PathVariable String id)
+            throws FileForbiddenException, ResourceNotFoundException {
         FileController.log.info("Deleting file {}...", id);
         return ResponseEntity
                 .ok(new MessageResponse(HttpStatus.OK, fileService.deleteFile(id)));
