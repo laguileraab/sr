@@ -18,3 +18,736 @@
 2022-04-21 20:28:43 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
 2022-04-21 20:28:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
 2022-04-21 20:28:44 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 13.241 seconds (JVM running for 15.019)
+2022-04-23 11:18:54 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ce.sr.SrApplicationTests], using SpringBootContextLoader
+2022-04-23 11:18:54 [main] INFO  org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.ce.sr.SrApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-04-23 11:18:54 [main] INFO  org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.ce.sr.SrApplicationTests]: SrApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022-04-23 11:18:55 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.ce.sr.SrApplication for test class com.ce.sr.SrApplicationTests
+2022-04-23 11:18:56 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener]
+2022-04-23 11:18:58 [main] INFO  org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@60d84f61, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@39c11e6c, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@324dcd31, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@503d56b5, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@72bca894, org.springframework.test.context.support.DirtiesContextTestExecutionListener@433ffad1, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1fc793c2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2575f671, org.springframework.test.context.event.EventPublishingTestExecutionListener@329a1243, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@ecf9fb3, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@2d35442b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27f9e982, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4593ff34, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@37d3d232, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@30c0ccff, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@581d969c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@22db8f4]
+2022-04-23 11:19:02 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 11:19:02 [main] INFO  com.ce.sr.SrApplicationTests - Starting SrApplicationTests using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 18500 (started by Leo in d:\Projects\CubanEngineer\sr)
+2022-04-23 11:19:02 [main] INFO  com.ce.sr.SrApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 11:19:35 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 11:19:37 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1530 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 11:19:59 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 11:20:03 [cluster-ClusterId{value='6264191fd44c6d11272c0f81', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:214}] to localhost:27017
+2022-04-23 11:20:03 [cluster-ClusterId{value='6264191fd44c6d11272c0f81', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1083935000}
+2022-04-23 11:20:03 [cluster-rtt-ClusterId{value='6264191fd44c6d11272c0f81', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:213}] to localhost:27017
+2022-04-23 11:20:16 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 11:20:16 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 11:20:20 [main] INFO  com.ce.sr.SrApplicationTests - Started SrApplicationTests in 81.387 seconds (JVM running for 98.251)
+2022-04-23 12:23:22 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:23:22 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 18108 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in d:\Projects\CubanEngineer\sr)
+2022-04-23 12:23:22 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:23:25 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:23:25 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:23:26 [main] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'metaDataSourceAdvisor': Cannot resolve reference to bean 'methodSecurityMetadataSource' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: MultipartFile [Xlint:invalidAbsoluteTypeName]
+2022-04-23 12:23:26 [main] INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2022-04-23 12:23:26 [main] ERROR org.springframework.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthEndpointGroupsBeanPostProcessor' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'metaDataSourceAdvisor': Cannot resolve reference to bean 'methodSecurityMetadataSource' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: MultipartFile [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:762) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:567) ~[spring-context-5.3.18.jar:5.3.18]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312) ~[spring-boot-2.6.6.jar:2.6.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.6.jar:2.6.6]
+	at com.ce.sr.SrApplication.main(SrApplication.java:12) ~[classes/:?]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'metaDataSourceAdvisor': Cannot resolve reference to bean 'methodSecurityMetadataSource' while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: MultipartFile [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:198) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 14 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration': BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: MultipartFile [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:198) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 14 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.cache.annotation.ProxyCachingConfiguration': Initialization of bean failed; nested exception is java.lang.IllegalArgumentException: warning no match for this type name: MultipartFile [Xlint:invalidAbsoluteTypeName]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:628) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:198) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 14 more
+Caused by: java.lang.IllegalArgumentException: warning no match for this type name: MultipartFile [Xlint:invalidAbsoluteTypeName]
+	at org.aspectj.weaver.tools.PointcutParser.parsePointcutExpression(PointcutParser.java:319) ~[aspectjweaver-1.9.7.jar:?]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.buildPointcutExpression(AspectJExpressionPointcut.java:227) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.obtainPointcutExpression(AspectJExpressionPointcut.java:198) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.AspectJExpressionPointcut.getClassFilter(AspectJExpressionPointcut.java:177) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:226) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.support.AopUtils.canApply(AopUtils.java:289) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.support.AopUtils.findAdvisorsThatCanApply(AopUtils.java:321) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findAdvisorsThatCanApply(AbstractAdvisorAutoProxyCreator.java:128) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findEligibleAdvisors(AbstractAdvisorAutoProxyCreator.java:97) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.getAdvicesAndAdvisorsForBean(AbstractAdvisorAutoProxyCreator.java:78) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.wrapIfNecessary(AbstractAutoProxyCreator.java:339) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessAfterInitialization(AbstractAutoProxyCreator.java:291) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:455) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1808) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:410) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:693) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:198) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.BeanFactoryAdvisorRetrievalHelper.findAdvisorBeans(BeanFactoryAdvisorRetrievalHelper.java:91) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAdvisorAutoProxyCreator.findCandidateAdvisors(AbstractAdvisorAutoProxyCreator.java:111) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator.findCandidateAdvisors(AnnotationAwareAspectJAutoProxyCreator.java:92) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator.shouldSkip(AspectJAwareAdvisorAutoProxyCreator.java:101) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.autoproxy.AbstractAutoProxyCreator.postProcessBeforeInstantiation(AbstractAutoProxyCreator.java:253) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1160) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeforeInstantiation(AbstractAutowireCapableBeanFactory.java:1135) ~[spring-beans-5.3.18.jar:5.3.18]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.18.jar:5.3.18]
+	... 14 more
+2022-04-23 12:24:38 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:24:38 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 7404 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in d:\Projects\CubanEngineer\sr)
+2022-04-23 12:24:38 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:24:41 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:24:41 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:24:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:24:45 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:24:45 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:24:45 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:24:45 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:24:45 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6968 ms
+2022-04-23 12:24:46 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:24:47 [cluster-ClusterId{value='6264284eb2020f180f47570a', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:215}] to localhost:27017
+2022-04-23 12:24:47 [cluster-ClusterId{value='6264284eb2020f180f47570a', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=200113600}
+2022-04-23 12:24:47 [cluster-rtt-ClusterId{value='6264284eb2020f180f47570a', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:216}] to localhost:27017
+2022-04-23 12:24:51 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:24:52 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:24:53 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:24:53 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:24:53 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 15.3 seconds (JVM running for 16.632)
+2022-04-23 12:27:02 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 12:27:02 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 12:27:02 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-04-23 12:27:02 [http-nio-80-exec-2] ERROR com.ce.sr.security.jwt.AuthEntryPointJwt - No authorization: Full authentication is required to access this resource
+2022-04-23 12:27:02 [http-nio-80-exec-2] ERROR com.ce.sr.security.jwt.AuthEntryPointJwt - No authorization: Full authentication is required to access this resource
+2022-04-23 12:27:10 [http-nio-80-exec-3] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:217}] to localhost:27017
+2022-04-23 12:27:15 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:27:15 [http-nio-80-exec-4] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 12:27:21 [task-1] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:27:31 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:27:50 [task-2] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:28:41 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:28:53 [task-3] INFO  com.ce.sr.controllers.FileController - Downloading file 6261923f352e0a0453b029a1...
+2022-04-23 12:28:58 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:28:59 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:29:17 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:29:21 [task-4] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:36:58 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:36:59 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 13712 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:36:59 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:37:05 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:37:05 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:37:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:37:09 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:37:09 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:37:09 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:37:10 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:37:10 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 10887 ms
+2022-04-23 12:37:12 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:37:13 [cluster-ClusterId{value='62642b38aaeb953b1e23d135', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:218}] to localhost:27017
+2022-04-23 12:37:13 [cluster-ClusterId{value='62642b38aaeb953b1e23d135', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=417721400}
+2022-04-23 12:37:13 [cluster-rtt-ClusterId{value='62642b38aaeb953b1e23d135', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:219}] to localhost:27017
+2022-04-23 12:37:21 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:37:22 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:37:24 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:37:25 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:37:25 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 27.592 seconds (JVM running for 30.031)
+2022-04-23 12:37:30 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:37:30 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 17500 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:37:30 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:37:33 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:37:34 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:37:36 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:37:36 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:37:36 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:37:36 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:37:36 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:37:36 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6071 ms
+2022-04-23 12:37:38 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:37:38 [cluster-ClusterId{value='62642b52cce1354821274e46', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:220}] to localhost:27017
+2022-04-23 12:37:38 [cluster-ClusterId{value='62642b52cce1354821274e46', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=69809300}
+2022-04-23 12:37:38 [cluster-rtt-ClusterId{value='62642b52cce1354821274e46', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:221}] to localhost:27017
+2022-04-23 12:37:42 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:37:42 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:37:43 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:37:43 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:37:43 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 14.172 seconds (JVM running for 15.97)
+2022-04-23 12:37:57 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 12:37:57 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 12:37:57 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2022-04-23 12:37:58 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:222}] to localhost:27017
+2022-04-23 12:37:58 [task-1] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:38:05 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:38:05 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 12:38:09 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:38:09 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:38:10 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:39:57 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:39:57 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 22928 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:39:57 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:40:00 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:40:00 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:40:02 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:40:02 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:40:02 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:40:02 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:40:02 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:40:02 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5311 ms
+2022-04-23 12:40:04 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:40:05 [cluster-rtt-ClusterId{value='62642be4278e955df9417be2', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:223}] to localhost:27017
+2022-04-23 12:40:05 [cluster-ClusterId{value='62642be4278e955df9417be2', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:224}] to localhost:27017
+2022-04-23 12:40:05 [cluster-ClusterId{value='62642be4278e955df9417be2', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=140394000}
+2022-04-23 12:40:14 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:40:14 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:40:16 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:40:17 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:40:17 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 20.573 seconds (JVM running for 22.063)
+2022-04-23 12:40:21 [http-nio-80-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 12:40:21 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 12:40:21 [http-nio-80-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2022-04-23 12:40:21 [http-nio-80-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:225}] to localhost:27017
+2022-04-23 12:40:21 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:40:21 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 12:40:26 [task-1] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:40:26 [task-1] ERROR org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler - Unexpected exception occurred invoking async method: public synchronized org.springframework.http.ResponseEntity com.ce.sr.controllers.FileController.upload(org.springframework.web.multipart.MultipartFile) throws java.io.IOException,java.lang.InterruptedException
+java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getPrincipal()" because the return value of "org.springframework.security.core.context.SecurityContext.getAuthentication()" is null
+	at com.ce.sr.services.FileService.addFile(FileService.java:44) ~[classes/:?]
+	at com.ce.sr.services.FileService$$FastClassBySpringCGLIB$$c3ad3319.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.aspectj.AspectJAfterAdvice.invoke(AspectJAfterAdvice.java:49) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698) ~[spring-aop-5.3.18.jar:5.3.18]
+	at com.ce.sr.services.FileService$$EnhancerBySpringCGLIB$$d2060cd3.addFile(<generated>) ~[classes/:?]
+	at com.ce.sr.controllers.FileController.upload(FileController.java:65) ~[classes/:?]
+	at com.ce.sr.controllers.FileController$$FastClassBySpringCGLIB$$3e777bff.invoke(<generated>) ~[classes/:?]
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218) ~[spring-core-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753) ~[spring-aop-5.3.18.jar:5.3.18]
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115) ~[spring-aop-5.3.18.jar:5.3.18]
+	at java.util.concurrent.FutureTask.run(Unknown Source) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[?:?]
+	at java.lang.Thread.run(Unknown Source) ~[?:?]
+2022-04-23 12:40:37 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:46:29 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:46:30 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 23136 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:46:30 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:46:34 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:46:34 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 179 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:46:36 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:46:36 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:46:36 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:46:36 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:46:37 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:46:37 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 7015 ms
+2022-04-23 12:46:38 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:46:39 [cluster-ClusterId{value='62642d6ea847a74ff5066eab', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:226}] to localhost:27017
+2022-04-23 12:46:39 [cluster-ClusterId{value='62642d6ea847a74ff5066eab', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=81171400}
+2022-04-23 12:46:39 [cluster-rtt-ClusterId{value='62642d6ea847a74ff5066eab', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:227}] to localhost:27017
+2022-04-23 12:46:43 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:46:43 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:46:44 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:46:44 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:46:44 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 14.711 seconds (JVM running for 17.338)
+2022-04-23 12:47:33 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:47:33 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 22156 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:47:33 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:47:37 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:47:37 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 125 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:47:39 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:47:39 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:47:39 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:47:39 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:47:39 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:47:39 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6158 ms
+2022-04-23 12:47:40 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:47:41 [cluster-ClusterId{value='62642dac92aa275536921980', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:229}] to localhost:27017
+2022-04-23 12:47:41 [cluster-ClusterId{value='62642dac92aa275536921980', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=39099300}
+2022-04-23 12:47:41 [cluster-rtt-ClusterId{value='62642dac92aa275536921980', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:228}] to localhost:27017
+2022-04-23 12:47:46 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:47:46 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:47:47 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:47:47 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:47:47 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 15.284 seconds (JVM running for 16.976)
+2022-04-23 12:47:48 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 12:47:48 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 12:47:48 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-04-23 12:47:48 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:230}] to localhost:27017
+2022-04-23 12:47:49 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:48:07 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:48:07 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 12:48:24 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Downloading file 6261923f352e0a0453b029a1...
+2022-04-23 12:48:24 [http-nio-80-exec-4] ERROR com.ce.sr.services.FileService - File 6261923f352e0a0453b029a1 not found
+2022-04-23 12:49:03 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:03 [http-nio-80-exec-5] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 12:49:17 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:19 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:20 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:21 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:23 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:24 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:29 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:49:29 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - File 62642db792aa275536921981 deleted
+2022-04-23 12:49:34 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:49:37 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:49:38 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:49:38 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:49:39 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:49:43 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:49 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:49:53 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:49:55 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:49:57 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:49:57 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:49:58 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:49:58 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:50:02 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:50:07 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 62642db792aa275536921981...
+2022-04-23 12:50:13 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:50:20 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Deleting file 62642db792aa275536921981...
+2022-04-23 12:56:14 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:56:14 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 5888 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:56:14 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:56:16 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:56:16 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:56:18 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:56:18 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:56:18 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:56:18 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:56:18 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:56:18 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4113 ms
+2022-04-23 12:56:19 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:56:19 [cluster-rtt-ClusterId{value='62642fb3c04044476984d0ea', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:231}] to localhost:27017
+2022-04-23 12:56:19 [cluster-ClusterId{value='62642fb3c04044476984d0ea', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:232}] to localhost:27017
+2022-04-23 12:56:19 [cluster-ClusterId{value='62642fb3c04044476984d0ea', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=42975000}
+2022-04-23 12:56:23 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:56:23 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:56:24 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:56:24 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:56:24 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 10.736 seconds (JVM running for 15.866)
+2022-04-23 12:56:32 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 12:56:32 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 12:56:32 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2022-04-23 12:56:33 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:233}] to localhost:27017
+2022-04-23 12:56:33 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:56:33 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 12:56:39 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:56:40 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:56:41 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:56:41 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:56:47 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:56:54 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 12:56:59 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:57:01 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:57:02 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:57:02 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:57:03 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:57:07 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:57:17 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:58:08 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 12:58:08 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 14600 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 12:58:08 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 12:58:11 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 12:58:11 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 87 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 12:58:13 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 12:58:13 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 12:58:13 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 12:58:13 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 12:58:13 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 12:58:13 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4894 ms
+2022-04-23 12:58:14 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 12:58:15 [cluster-rtt-ClusterId{value='62643026a3c0ca7f3b59dc5b', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:235}] to localhost:27017
+2022-04-23 12:58:15 [cluster-ClusterId{value='62643026a3c0ca7f3b59dc5b', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:234}] to localhost:27017
+2022-04-23 12:58:15 [cluster-ClusterId{value='62643026a3c0ca7f3b59dc5b', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=181185600}
+2022-04-23 12:58:19 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 12:58:19 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 12:58:20 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 12:58:20 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 12:58:20 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 12.104 seconds (JVM running for 13.75)
+2022-04-23 12:58:24 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 12:58:24 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 12:58:24 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-04-23 12:58:25 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:236}] to localhost:27017
+2022-04-23 12:58:25 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 12:58:25 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 12:58:32 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Deleting file 62642fd6c04044476984d0ed...
+2022-04-23 13:00:13 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 13:00:13 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 22696 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 13:00:13 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 13:00:15 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 13:00:15 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 130 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 13:00:18 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 13:00:18 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 13:00:18 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 13:00:18 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 13:00:18 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 13:00:18 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5098 ms
+2022-04-23 13:00:19 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 13:00:19 [cluster-ClusterId{value='626430a3fd0a0871146860e2', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:238}] to localhost:27017
+2022-04-23 13:00:19 [cluster-ClusterId{value='626430a3fd0a0871146860e2', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=47280000}
+2022-04-23 13:00:19 [cluster-rtt-ClusterId{value='626430a3fd0a0871146860e2', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:237}] to localhost:27017
+2022-04-23 13:00:23 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 13:00:24 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 13:00:24 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 13:00:24 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 13:00:24 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 12.371 seconds (JVM running for 13.889)
+2022-04-23 13:00:34 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 13:00:34 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 13:00:34 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2022-04-23 13:00:34 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:239}] to localhost:27017
+2022-04-23 13:00:34 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Deleting file 62642fd6c04044476984d0ed...
+2022-04-23 13:00:34 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - File 62642fd6c04044476984d0ed deleted
+2022-04-23 13:00:38 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Deleting file 62642fd6c04044476984d0ed...
+2022-04-23 13:00:38 [http-nio-80-exec-3] ERROR com.ce.sr.services.FileService - File 62642fd6c04044476984d0ed not found
+2022-04-23 13:00:51 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:00:51 [http-nio-80-exec-4] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:00:55 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:00:59 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:01:04 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:01:07 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:01:22 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Downloading file 62642fd1c04044476984d0eb...
+2022-04-23 13:01:22 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:01:27 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 62642fd1c04044476984d0eb...
+2022-04-23 13:01:33 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Deleting file 62642fd1c04044476984d0eb...
+2022-04-23 13:01:33 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - File 62642fd1c04044476984d0eb deleted
+2022-04-23 13:01:42 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:08:29 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 13:08:29 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 8812 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 13:08:29 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 13:08:32 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 13:08:32 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 13:08:34 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 13:08:34 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 13:08:34 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 13:08:34 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 13:08:34 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 13:08:34 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5266 ms
+2022-04-23 13:08:35 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 13:08:36 [cluster-ClusterId{value='626432937630a54b48a5ad54', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:240}] to localhost:27017
+2022-04-23 13:08:36 [cluster-ClusterId{value='626432937630a54b48a5ad54', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=32824300}
+2022-04-23 13:08:36 [cluster-rtt-ClusterId{value='626432937630a54b48a5ad54', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:241}] to localhost:27017
+2022-04-23 13:08:41 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 13:08:41 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 13:08:42 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 13:08:42 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 13:08:42 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 14.001 seconds (JVM running for 15.905)
+2022-04-23 13:08:44 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 13:08:44 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 13:08:44 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2022-04-23 13:08:44 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:242}] to localhost:27017
+2022-04-23 13:08:45 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:08:45 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:08:50 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:08:50 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:08:55 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:08:58 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:09:01 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:01 [http-nio-80-exec-6] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:06 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:06 [http-nio-80-exec-7] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:08 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:08 [http-nio-80-exec-8] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:08 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:08 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:09 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:09 [http-nio-80-exec-10] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:10 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:10 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:25 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Deleting file 626432aa7630a54b48a5ad57...
+2022-04-23 13:09:25 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - File 626432aa7630a54b48a5ad57 deleted
+2022-04-23 13:09:28 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Deleting file 626432aa7630a54b48a5ad57...
+2022-04-23 13:09:28 [http-nio-80-exec-3] ERROR com.ce.sr.services.FileService - File 626432aa7630a54b48a5ad57 not found
+2022-04-23 13:09:34 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Downloading file 626432aa7630a54b48a5ad57...
+2022-04-23 13:09:34 [http-nio-80-exec-4] ERROR com.ce.sr.services.FileService - File 626432aa7630a54b48a5ad57 not found
+2022-04-23 13:09:38 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:09:38 [http-nio-80-exec-5] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:09:48 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:09:48 [http-nio-80-exec-6] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:09:50 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:09:51 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:09:52 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:09:54 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:00 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Deleting file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:00 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - File 626432a77630a54b48a5ad55 deleted
+2022-04-23 13:10:08 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:09 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:10 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:11 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:12 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:13 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:10:22 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:10:22 [http-nio-80-exec-8] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:11:10 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:11:10 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:11:13 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 626432a77630a54b48a5ad55...
+2022-04-23 13:12:23 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.2.3.Final
+2022-04-23 13:12:23 [main] INFO  com.ce.sr.SrApplication - Starting SrApplication using Java 17.0.2 on DESKTOP-TQ6NHHB with PID 4232 (D:\Projects\CubanEngineer\sr\target\classes started by Leo in D:\Projects\CubanEngineer\sr)
+2022-04-23 13:12:23 [main] INFO  com.ce.sr.SrApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-23 13:12:26 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2022-04-23 13:12:26 [main] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 105 ms. Found 2 MongoDB repository interfaces.
+2022-04-23 13:12:28 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+2022-04-23 13:12:28 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2022-04-23 13:12:28 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-23 13:12:28 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-23 13:12:28 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2022-04-23 13:12:28 [main] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4946 ms
+2022-04-23 13:12:29 [main] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022-04-23 13:12:30 [cluster-rtt-ClusterId{value='6264337db2d1b75b7ae6ca70', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:244}] to localhost:27017
+2022-04-23 13:12:30 [cluster-ClusterId{value='6264337db2d1b75b7ae6ca70', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:243}] to localhost:27017
+2022-04-23 13:12:30 [cluster-ClusterId{value='6264337db2d1b75b7ae6ca70', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=46064800}
+2022-04-23 13:12:34 [main] INFO  org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver - Exposing 13 endpoint(s) beneath base path '/actuator'
+2022-04-23 13:12:34 [main] INFO  org.springframework.security.web.DefaultSecurityFilterChain - Will not secure any request
+2022-04-23 13:12:35 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2022-04-23 13:12:35 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+2022-04-23 13:12:35 [main] INFO  com.ce.sr.SrApplication - Started SrApplication in 12.525 seconds (JVM running for 14.088)
+2022-04-23 13:12:40 [http-nio-80-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-23 13:12:40 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-23 13:12:40 [http-nio-80-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2022-04-23 13:12:41 [http-nio-80-exec-2] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:245}] to localhost:27017
+2022-04-23 13:12:41 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:12:41 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:12:43 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:12:43 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:12:46 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:12:48 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:12:50 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:12:50 [http-nio-80-exec-6] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:12:58 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:12:58 [http-nio-80-exec-7] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:00 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:00 [http-nio-80-exec-8] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:01 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:02 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:03 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:03 [http-nio-80-exec-10] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:04 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:04 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:05 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:05 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:10 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Deleting file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:10 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - File 62643390b2d1b75b7ae6ca73 deleted
+2022-04-23 13:13:13 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Deleting file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:13 [http-nio-80-exec-4] ERROR com.ce.sr.services.FileService - File 62643390b2d1b75b7ae6ca73 not found
+2022-04-23 13:13:16 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Downloading file 62643390b2d1b75b7ae6ca73...
+2022-04-23 13:13:16 [http-nio-80-exec-5] ERROR com.ce.sr.services.FileService - File 62643390b2d1b75b7ae6ca73 not found
+2022-04-23 13:13:30 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:13:30 [http-nio-80-exec-6] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:13:34 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:34 [http-nio-80-exec-7] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:38 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:38 [http-nio-80-exec-8] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:39 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:39 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:40 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:40 [http-nio-80-exec-10] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:41 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:41 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:42 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:42 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:43 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:43 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:44 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:44 [http-nio-80-exec-4] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:45 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:45 [http-nio-80-exec-5] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:46 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:46 [http-nio-80-exec-6] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:13:48 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 6264338eb2d1b75b7ae6ca71...
+2022-04-23 13:13:48 [http-nio-80-exec-7] INFO  com.ce.sr.services.FileService - File [ae] Instructions for technical test - Fullstack Senior Software Engineer.pdf downloaded
+2022-04-23 13:14:21 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:14:25 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:14:25 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:14:36 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Uploading file...
+2022-04-23 13:14:38 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:14:38 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:14:47 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:14:47 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:14:48 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:14:48 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:14:58 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Downloading file 626433fcb2d1b75b7ae6cad8...
+2022-04-23 13:14:58 [http-nio-80-exec-4] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:15:15 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Downloading file 626433fcb2d1b75b7ae6cad8...
+2022-04-23 13:15:15 [http-nio-80-exec-5] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:15:22 [http-nio-80-exec-6] INFO  com.ce.sr.controllers.FileController - Downloading file 626433fcb2d1b75b7ae6cad8...
+2022-04-23 13:15:22 [http-nio-80-exec-6] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:15:30 [http-nio-80-exec-7] INFO  com.ce.sr.controllers.FileController - Downloading file 626433fcb2d1b75b7ae6cad8...
+2022-04-23 13:15:31 [http-nio-80-exec-7] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:16:04 [http-nio-80-exec-8] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:16:04 [http-nio-80-exec-8] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:16:48 [http-nio-80-exec-9] INFO  com.ce.sr.controllers.FileController - Deleting file 626433fcb2d1b75b7ae6cad8...
+2022-04-23 13:16:48 [http-nio-80-exec-9] INFO  com.ce.sr.services.FileService - File 626433fcb2d1b75b7ae6cad8 deleted
+2022-04-23 13:16:53 [http-nio-80-exec-10] INFO  com.ce.sr.controllers.FileController - Downloading file 626433fcb2d1b75b7ae6cad8...
+2022-04-23 13:16:53 [http-nio-80-exec-10] ERROR com.ce.sr.services.FileService - File 626433fcb2d1b75b7ae6cad8 not found
+2022-04-23 13:16:57 [http-nio-80-exec-1] INFO  com.ce.sr.controllers.FileController - Showing files to user
+2022-04-23 13:16:57 [http-nio-80-exec-1] INFO  com.ce.sr.services.FileService - Displaying list of files
+2022-04-23 13:17:07 [http-nio-80-exec-2] INFO  com.ce.sr.controllers.FileController - Downloading file 626433edb2d1b75b7ae6ca75...
+2022-04-23 13:17:07 [http-nio-80-exec-2] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:17:23 [http-nio-80-exec-3] INFO  com.ce.sr.controllers.FileController - Downloading file 626433edb2d1b75b7ae6ca75...
+2022-04-23 13:17:23 [http-nio-80-exec-3] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:17:42 [http-nio-80-exec-4] INFO  com.ce.sr.controllers.FileController - Downloading file 626433edb2d1b75b7ae6ca75...
+2022-04-23 13:17:42 [http-nio-80-exec-4] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded
+2022-04-23 13:17:53 [http-nio-80-exec-5] INFO  com.ce.sr.controllers.FileController - Downloading file 626433edb2d1b75b7ae6ca75...
+2022-04-23 13:17:53 [http-nio-80-exec-5] INFO  com.ce.sr.services.FileService - File APK Convenio Colectivo de Trabajo - UCI (2022-2025).apk downloaded

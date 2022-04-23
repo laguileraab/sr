@@ -10,12 +10,15 @@ import com.mongodb.client.gridfs.GridFSFindIterable;
 import com.mongodb.client.gridfs.model.GridFSFile;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsCriteria;
 import org.springframework.data.mongodb.gridfs.GridFsOperations;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,20 +40,26 @@ public class FileService {
 
     @Autowired
     private GridFsOperations operations;
-
-    public String addFile(MultipartFile upload) throws IOException {
+    
+    public void addFile(MultipartFile upload) throws IOException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
         DBObject metadata = new BasicDBObject();
         metadata.put(Constants.FILESIZE, upload.getSize());
         metadata.put(Constants.OWNER, userDetails.getId());
-        Object fileID = template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
-                metadata);
-        return fileID.toString();
+        uploadFile(upload, metadata);
+        //return Object fileID = fileID.toString();
     }
 
-    @Cacheable("files")
+    @Async
+    @CachePut("file")
+    public void uploadFile(MultipartFile upload, DBObject metadata) throws IOException{
+        template.store(upload.getInputStream(), upload.getOriginalFilename(), upload.getContentType(),
+                metadata);
+    }
+
+    @CacheEvict(value = "files", allEntries = true)
     public List<FileUpload> getMetadataFilesFromUser() {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
@@ -73,7 +82,7 @@ public class FileService {
         return fileUploads;
     }
 
-    @Cacheable("file")
+    @CacheEvict(value = "file")
     public FileUpload downloadFile(String id) throws IOException, FileForbiddenException, ResourceNotFoundException {
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
@@ -102,7 +111,7 @@ public class FileService {
         return fileUpload;
     }
 
-    @Cacheable("dFile")
+    @CacheEvict(value = "files")
     public String deleteFile(String id) throws FileForbiddenException, ResourceNotFoundException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
