@@ -67,11 +67,12 @@ public class FileService {
         GridFSFindIterable gridFSFiles = template.find(new Query(
                 GridFsCriteria.whereMetaData(Constants.OWNER)
                         .is(userDetails.getId())));
-        FileUpload fileUpload = new FileUpload();
         List<FileUpload> fileUploads = new ArrayList<>();
         gridFSFiles.forEach(gridFSFile -> {
             if (gridFSFile != null && gridFSFile.getMetadata() != null) {
+                FileUpload fileUpload = new FileUpload();
                 fileUpload.setId(gridFSFile.getObjectId().toString());
+                FileService.log.info("{}",gridFSFile.getFilename());
                 fileUpload.setFilename(gridFSFile.getFilename());
                 fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
                 fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
