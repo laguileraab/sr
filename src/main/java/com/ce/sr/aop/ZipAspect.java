@@ -7,12 +7,9 @@ import java.io.InputStream;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 import com.ce.sr.exceptions.ResourceNotFoundException;
-import com.ce.sr.models.FileMetadata;
-import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.repository.FileRepository;
 import com.ce.sr.utils.Constants;
 import com.mongodb.BasicDBObject;
@@ -20,9 +17,7 @@ import com.mongodb.DBObject;
 import com.mongodb.client.gridfs.model.GridFSFile;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.input.BufferedFileChannelInputStream;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;

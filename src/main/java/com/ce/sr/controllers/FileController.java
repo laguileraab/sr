@@ -2,7 +2,6 @@ package com.ce.sr.controllers;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.concurrent.Future;
 
 import javax.validation.Valid;
 
@@ -12,15 +11,12 @@ import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.payload.response.MessageResponse;
 import com.ce.sr.services.FileService;
 
-import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
