@@ -15,5 +15,6 @@ public class Constants {
     public static final String STATUS = "status";
     public static final String UPLOAD = "Upload";
     public static final String READY = "Ready";
+    public static final String FORBIDDENFILE = "You don't have access to this file ";
     
 }
