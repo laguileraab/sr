@@ -100,7 +100,7 @@ public class FileService {
                 } else {
                     FileService.log.error("Attempt to download file {} from user {}",
                             fileUpload.getFilename(), userDetails.getUsername());
-                    throw new FileForbiddenException("You don't have access to this file " + id);
+                    throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
                 }
             }
             FileService.log.info("File {} downloaded", fileUpload.getFilename());
@@ -109,6 +109,24 @@ public class FileService {
             throw new ResourceNotFoundException("File with id " + id + " not found");
         }
         return fileUpload;
+    }
+
+    public void updateFile(String name, String id) throws ResourceNotFoundException, FileForbiddenException {
+        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal();
+        Optional<FileMetadata> fileMetadata = fileRepository.findByFileId(id);
+        if (!fileMetadata.isPresent()) {
+            throw new ResourceNotFoundException(id);
+        } else {
+            if (userDetails.getId().equals(fileMetadata.get().getOwner())) {
+                fileMetadata.get().setFilename(name.concat(".zip"));
+                fileRepository.save(fileMetadata.get());
+            } else {
+                FileService.log.error("Attempt to update file {} from user {}",
+                        fileMetadata.get().getFilename(), userDetails.getUsername());
+                throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
+            }
+        }
     }
 
     @CacheEvict(value = "files")
@@ -128,7 +146,7 @@ public class FileService {
                 FileService.log.error("Attempt to delete file {} with id {} from user {}",
                         gridFSFile.getFilename(), gridFSFile.getObjectId().toString(),
                         userDetails.getUsername());
-                throw new FileForbiddenException("You don't have access to this file " + id);
+                throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
             }
         } catch (NoSuchElementException npe) {
             FileService.log.error("File {} not found", id);
