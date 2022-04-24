@@ -46,8 +46,7 @@ public class ZipAspect {
     private FileRepository fileRepository;
 
     @Pointcut("execution(public * com.ce.sr.services.FileService.addFile(..))")
-    public void addFileMethod() {
-    };
+    public void addFileMethod() {};
 
     @AfterReturning(pointcut = "addFileMethod()", returning = "id")
     public void zipFile(JoinPoint jp, Object id) throws IllegalStateException, IOException, ResourceNotFoundException {
