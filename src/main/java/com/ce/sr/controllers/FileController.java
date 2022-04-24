@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.Future;
 
+import javax.validation.Valid;
+
 import com.ce.sr.exceptions.FileForbiddenException;
 import com.ce.sr.exceptions.ResourceNotFoundException;
 import com.ce.sr.payload.response.FileUpload;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -47,7 +50,7 @@ public class FileController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ByteArrayResource> download(@PathVariable String id)
+    public ResponseEntity<ByteArrayResource> download(@Valid @PathVariable String id)
             throws IOException, FileForbiddenException, ResourceNotFoundException {
         FileController.log.info("Downloading file {}...", id);
         FileUpload fileUpload = fileService.downloadFile(id);
@@ -59,7 +62,7 @@ public class FileController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public synchronized ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file)
+    public ResponseEntity<MessageResponse> upload(@RequestParam("file") MultipartFile file)
             throws IOException {
         FileController.log.info("Uploading file...");
         fileService.addFile(file.getInputStream(), file.getSize(), file.getOriginalFilename(),
@@ -69,8 +72,18 @@ public class FileController {
                         "File " + file.getOriginalFilename() + " uploaded successfully"));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<MessageResponse> update(@RequestParam("name") String name,@Valid @PathVariable String id)
+            throws ResourceNotFoundException, FileForbiddenException {
+        FileController.log.info("Updating file...");
+        fileService.updateFile(name, id);
+        return ResponseEntity
+                .ok(new MessageResponse(HttpStatus.OK,
+                "File " + name + ".zip updated successfully"));
+            }
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<MessageResponse> deleteFile(@PathVariable String id)
+    public ResponseEntity<MessageResponse> deleteFile(@Valid @PathVariable String id)
             throws FileForbiddenException, ResourceNotFoundException {
         FileController.log.info("Deleting file {}...", id);
         return ResponseEntity

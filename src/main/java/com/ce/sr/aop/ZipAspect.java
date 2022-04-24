@@ -11,7 +11,9 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 import com.ce.sr.exceptions.ResourceNotFoundException;
+import com.ce.sr.models.FileMetadata;
 import com.ce.sr.payload.response.FileUpload;
+import com.ce.sr.repository.FileRepository;
 import com.ce.sr.utils.Constants;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
@@ -24,6 +26,7 @@ import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -43,6 +46,9 @@ public class ZipAspect {
 
     @Autowired
     private GridFsOperations operations;
+
+    @Autowired
+    private FileRepository fileRepository;
 
     @Pointcut("execution(public * com.ce.sr.services.FileService.addFile(..))")
     public void addFileMethod() {
@@ -75,7 +81,13 @@ public class ZipAspect {
                 DBObject metadata = new BasicDBObject();
                 metadata.put(Constants.FILESIZE, file.length);
                 metadata.put(Constants.OWNER, gridFSFile.getMetadata().get(Constants.OWNER));
-                template.store(is, fileName, Constants.CONTENTTYPEZIP, metadata);
+                metadata.put(Constants.STATUS, Constants.READY);
+                fileRepository.findByFileId(id.toString()).ifPresent(fileUpdate -> {
+                    fileUpdate.setFilename(fileName);
+                    ObjectId objectId = template.store(is, fileName, Constants.CONTENTTYPEZIP, metadata);
+                    fileUpdate.setFileId(objectId.toString());
+                    fileRepository.save(fileUpdate);
+                });
             }
         } catch (NoSuchElementException npe) {
             ZipAspect.log.error("File {} not found", id);

@@ -14,5 +14,6 @@ public class FileUpload {
     private String filename;
     private String fileType;
     private String fileSize;
+    private String status;
     private byte[] file;
 }

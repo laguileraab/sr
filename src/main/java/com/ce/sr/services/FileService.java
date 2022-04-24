@@ -2,23 +2,37 @@ package com.ce.sr.services;
 
 import com.ce.sr.exceptions.FileForbiddenException;
 import com.ce.sr.exceptions.ResourceNotFoundException;
+import com.ce.sr.models.FileMetadata;
 import com.ce.sr.payload.response.FileUpload;
+import com.ce.sr.repository.FileRepository;
 import com.ce.sr.utils.Constants;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
+import com.mongodb.client.MongoClient;
 import com.mongodb.client.gridfs.GridFSFindIterable;
 import com.mongodb.client.gridfs.model.GridFSFile;
+import com.mongodb.client.gridfs.model.GridFSUploadOptions;
+
 import org.apache.commons.io.IOUtils;
+import org.aspectj.weaver.loadtime.Options;
+import org.bson.BsonValue;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.mongodb.core.MongoAdmin;
+import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.gridfs.GridFsCriteria;
+import org.springframework.data.mongodb.gridfs.GridFsObject;
 import org.springframework.data.mongodb.gridfs.GridFsOperations;
+import org.springframework.data.mongodb.gridfs.GridFsResource;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
+import org.springframework.data.mongodb.gridfs.GridFsUpload;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -30,8 +44,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+
+import javax.validation.Valid;
 
 @Log4j2
 @Service
@@ -42,20 +59,29 @@ public class FileService {
 
     @Autowired
     private GridFsOperations operations;
-    
+
+    @Autowired
+    private FileRepository fileRepository;
+
     public String addFile(InputStream file, Long size, String name, String contentType) throws IOException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
         DBObject metadata = new BasicDBObject();
         metadata.put(Constants.FILESIZE, size);
+        metadata.put(Constants.STATUS, Constants.UPLOAD);
         metadata.put(Constants.OWNER, userDetails.getId());
-        return uploadFile(file, metadata, name, contentType).toString();
+        FileMetadata fileMetadata = new FileMetadata();
+        fileMetadata.setFilename(name);
+        fileMetadata.setOwner(userDetails.getId());
+        fileMetadata.setFileId(uploadFile(file, metadata, name, contentType).toString());
+        fileRepository.save(fileMetadata);
+        return fileMetadata.getFileId();
     }
 
     @Async
     @CachePut("file")
-    public ObjectId uploadFile(InputStream file, DBObject metadata, String name, String contentType) throws IOException{
+    public ObjectId uploadFile(InputStream file, DBObject metadata, String name, String contentType) {
         return template.store(file, name, contentType,
                 metadata);
     }
@@ -73,7 +99,11 @@ public class FileService {
             if (gridFSFile != null && gridFSFile.getMetadata() != null) {
                 FileUpload fileUpload = new FileUpload();
                 fileUpload.setId(gridFSFile.getObjectId().toString());
-                fileUpload.setFilename(gridFSFile.getFilename());
+                fileRepository.findByFileId(fileUpload.getId())
+                        .ifPresentOrElse(file -> fileUpload.setFilename(file.getFilename()), () -> {
+                            return;
+                        });
+                fileUpload.setStatus(gridFSFile.getMetadata().get(Constants.STATUS).toString());
                 fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
                 fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
                 fileUploads.add(fileUpload);
@@ -93,10 +123,16 @@ public class FileService {
         try {
             GridFSFile gridFSFile = gridFSFileOptional.get();
             if (gridFSFile.getMetadata() != null) {
-                fileUpload.setFilename(gridFSFile.getFilename());
-                fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
-                fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
-                if (userDetails.getId().equals(gridFSFile.getMetadata().get(Constants.OWNER).toString())) {
+                Document metadata = gridFSFile.getMetadata();
+
+                fileRepository.findByFileId(id).ifPresentOrElse(file -> fileUpload.setFilename(file.getFilename()),
+                        () -> fileUpload.setFilename(gridFSFile.getFilename()));
+
+                fileUpload.setFileType(metadata.get(Constants.CONTENTTYPE).toString());
+                fileUpload.setStatus(metadata.get(Constants.STATUS).toString());
+                fileUpload.setFileSize(metadata.get(Constants.FILESIZE).toString());
+
+                if (userDetails.getId().equals(metadata.get(Constants.OWNER).toString())) {
                     fileUpload.setFile(IOUtils.toByteArray(operations.getResource(gridFSFile).getInputStream()));
                 } else {
                     FileService.log.error("Attempt to download file {} from user {}",
@@ -112,18 +148,37 @@ public class FileService {
         return fileUpload;
     }
 
+    public void updateFile(String name, String id) throws ResourceNotFoundException, FileForbiddenException {
+        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
+                .getPrincipal();
+        Optional<FileMetadata> fileMetadata = fileRepository.findByFileId(id);
+        if (!fileMetadata.isPresent()) {
+            throw new ResourceNotFoundException(id);
+        } else {
+            if (userDetails.getId().equals(fileMetadata.get().getOwner())) {
+                fileMetadata.get().setFilename(name.concat(".zip"));
+                fileRepository.save(fileMetadata.get());
+            } else {
+                FileService.log.error("Attempt to update file {} from user {}",
+                        fileMetadata.get().getFilename(), userDetails.getUsername());
+                throw new FileForbiddenException("You don't have access to this file " + id);
+            }
+        }
+    }
+
     @CacheEvict(value = "files")
     public String deleteFile(String id) throws FileForbiddenException, ResourceNotFoundException {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
+        Query query = new Query(Criteria.where(Constants.ID).is(id));
         Optional<GridFSFile> gridFSFileOptional = Optional
-                .ofNullable(template.findOne(new Query(Criteria.where(Constants.ID).is(id))));
+                .ofNullable(template.findOne(query));
         try {
             GridFSFile gridFSFile = gridFSFileOptional.get();
             if (userDetails.getId().equals(gridFSFile.getMetadata().get(Constants.OWNER).toString())) {
-                Query query = new Query(Criteria.where(Constants.ID).is(id));
                 template.delete(query);
+                fileRepository.deleteByFileId(id);
                 FileService.log.info("File {} deleted", id);
             } else {
                 FileService.log.error("Attempt to delete file {} with id {} from user {}",

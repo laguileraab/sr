@@ -12,4 +12,8 @@ public class Constants {
     public static final String CONTENTTYPEZIP = "application/zip";
     public static final String ID = "_id";
     public static final String ADMIN = "admin";
+    public static final String STATUS = "status";
+    public static final String UPLOAD = "Upload";
+    public static final String READY = "Ready";
+    
 }
