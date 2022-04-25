@@ -1,0 +1,9 @@
+db.createCollection("roles");
+db.roles.insertMany([
+    {
+        name:"ROLE_USER"
+    },
+    {
+        name:"ROLE_ADMIN"
+    }
+])

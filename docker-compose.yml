@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: spring-boot-upload-mongodb
+    container_name: "spring-boot-upload-mongodb-app"
+    hostname: app
+    ports:
+      - "80:80"
+    environment:
+      - SERVER_PORT=80
+      - SPRING_APPLICATION_NAME=spring-boot-upload-mongodb-app
+      - SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE=upload
+      - SPRING_DATA_MONGODB_HOST=mongodb-host
+      - SPRING_DATA_MONGODB_PORT=27017
+      - SPRING_DATA_MONGODB_DATABASE=upload
+    depends_on:
+      - mongodb
+    networks:
+      - my-network
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    hostname: mongodb-host
+    environment:
+      - MONGO_INITDB_DATABASE=upload
+    ports:
+      - "27017:27017"
+    networks:
+      - my-network
+    volumes:
+      - ./data/init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+networks:
+  my-network:
+    driver: bridge
