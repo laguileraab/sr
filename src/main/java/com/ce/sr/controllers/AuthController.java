@@ -74,7 +74,7 @@ public class AuthController {
             AuthController.log.info("Bad credentials " + loginRequest.getUsername());
             return ResponseEntity
                     .status(HttpStatus.FORBIDDEN)
-                    .body("Bad credentials " + loginRequest.getUsername());
+                    .body(new MessageResponse(HttpStatus.FORBIDDEN, "Bad credentials " + loginRequest.getUsername()));
         }
     }
 

@@ -76,5 +76,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		"/webjars/**",
 		// -- Actuator endpoints
 		"/actuator/**"
-};
+	};
 }

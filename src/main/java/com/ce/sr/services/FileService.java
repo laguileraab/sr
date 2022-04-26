@@ -100,8 +100,8 @@ public class FileService {
 
     @CacheEvict(value = "file")
     public FileUpload downloadFile(String id) throws IOException, FileForbiddenException, ResourceNotFoundException {
-        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal();
+        UserDetailsImpl userDetails = getUser(id);
+
         Optional<GridFSFile> gridFSFileOptional = Optional
                 .ofNullable(template.findOne(new Query(Criteria.where(Constants.ID).is(id))));
         FileUpload fileUpload = new FileUpload();
@@ -112,7 +112,7 @@ public class FileService {
 
                 fileRepository.findByFileId(id).ifPresentOrElse(file -> fileUpload.setFilename(file.getFilename()),
                         () -> fileUpload.setFilename(gridFSFile.getFilename()));
-
+                fileUpload.setId(id);
                 fileUpload.setFileType(metadata.get(Constants.CONTENTTYPE).toString());
                 fileUpload.setStatus(metadata.get(Constants.STATUS).toString());
                 fileUpload.setFileSize(metadata.get(Constants.FILESIZE).toString());
@@ -134,8 +134,7 @@ public class FileService {
     }
 
     public void updateFile(String name, String id) throws ResourceNotFoundException, FileForbiddenException {
-        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal();
+        UserDetailsImpl userDetails = getUser(id);
         Optional<FileMetadata> fileMetadata = fileRepository.findByFileId(id);
         if (!fileMetadata.isPresent()) {
             throw new ResourceNotFoundException(id);
@@ -154,8 +153,7 @@ public class FileService {
     @CacheEvict(value = "files")
     public String deleteFile(String id) throws FileForbiddenException, ResourceNotFoundException {
 
-        UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal();
+        UserDetailsImpl userDetails = getUser(id);
         Query query = new Query(Criteria.where(Constants.ID).is(id));
         Optional<GridFSFile> gridFSFileOptional = Optional
                 .ofNullable(template.findOne(query));
@@ -175,7 +173,17 @@ public class FileService {
             FileService.log.error("File {} not found", id);
             throw new ResourceNotFoundException("File with id " + id + " not found");
         }
-        return "File " + id + " was deleted successfully";
+        return "File with id: " + id + " was deleted successfully";
     }
+
+    public UserDetailsImpl getUser(String id) throws FileForbiddenException{
+        try{
+            return (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
+                    .getPrincipal();
+                }catch(NullPointerException npe){
+                    throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
+                }
+    }
+
 
 }

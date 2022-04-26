@@ -54,7 +54,6 @@ public class ZipAspect {
         Query query = new Query(Criteria.where(Constants.ID).is(id.toString()));
         Optional<GridFSFile> gridFSFileOptional = Optional
                 .ofNullable(template.findOne(query));
-        try {
             GridFSFile gridFSFile = gridFSFileOptional.get();
             if (gridFSFile.getMetadata() != null) {
                 String fileName = gridFSFile.getFilename().concat(".zip");
@@ -83,9 +82,5 @@ public class ZipAspect {
                     fileRepository.save(fileUpdate);
                 });
             }
-        } catch (NoSuchElementException npe) {
-            ZipAspect.log.error("File {} not found", id);
-            throw new ResourceNotFoundException("File with id " + id + " not found");
-        }
     }
 }
