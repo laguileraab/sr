@@ -32,7 +32,7 @@
 
 ## :dart: About ##
 
-In this project i made an REST API that allow you to upload a file and download it from MongoDB using Grid File System embedded in Mongo. The files are limited for a 200mb files, but it can be changed in the application's properties, there is currently no restriction in the type of file to be uploaded, also every file is gonna be compressed in a zip format and re stored in the database.
+In this project i made a REST API that allow you to upload a file and download it from MongoDB using Grid File System embedded in Mongo. The files are limited for a 200mb files, but it can be changed in the application's properties, there is currently no restriction in the type of file to be uploaded, also every file is gonna be compressed in a zip format and re stored in the database.
 
 The files are stored for a specific user and is necessary to be authenticated first with a previously sign up user.
 
