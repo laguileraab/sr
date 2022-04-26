@@ -4,7 +4,6 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -20,7 +19,6 @@ import org.apache.commons.io.IOUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -45,10 +43,7 @@ public class ZipAspect {
     @Autowired
     private FileRepository fileRepository;
 
-    @Pointcut("execution(public * com.ce.sr.services.FileService.addFile(..))")
-    public void addFileMethod() {};
-
-    @AfterReturning(pointcut = "addFileMethod()", returning = "id")
+    @AfterReturning(pointcut = "execution(public * com.ce.sr.services.FileService.addFile(..))", returning = "id")
     public void zipFile(JoinPoint jp, Object id) throws IllegalStateException, IOException, ResourceNotFoundException {
         // Get uploaded document from the database
         Query query = new Query(Criteria.where(Constants.ID).is(id.toString()));
@@ -60,6 +55,7 @@ public class ZipAspect {
                 byte[] file = IOUtils.toByteArray(operations.getResource(gridFSFile).getInputStream());
                 // Delete document to keep only the zip file
                 template.delete(query);
+                ZipAspect.log.debug("File with id {id} deleted",id);
                 // Make the zip file from previous file
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 ZipOutputStream zos = new ZipOutputStream(baos);
@@ -80,6 +76,7 @@ public class ZipAspect {
                     ObjectId objectId = template.store(is, fileName, Constants.CONTENTTYPEZIP, metadata);
                     fileUpdate.setFileId(objectId.toString());
                     fileRepository.save(fileUpdate);
+                    ZipAspect.log.debug("File with id {id} inserted",id);
                 });
             }
     }

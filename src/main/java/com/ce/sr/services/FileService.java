@@ -48,7 +48,7 @@ public class FileService {
     @Autowired
     private FileRepository fileRepository;
 
-    public String addFile(InputStream file, Long size, String name, String contentType){
+    public String addFile(InputStream file, Long size, String name, String contentType) {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
@@ -81,18 +81,14 @@ public class FileService {
                         .is(userDetails.getId())));
         List<FileUpload> fileUploads = new ArrayList<>();
         gridFSFiles.forEach(gridFSFile -> {
-            if (gridFSFile != null && gridFSFile.getMetadata() != null) {
-                FileUpload fileUpload = new FileUpload();
-                fileUpload.setId(gridFSFile.getObjectId().toString());
-                fileRepository.findByFileId(fileUpload.getId())
-                        .ifPresentOrElse(file -> fileUpload.setFilename(file.getFilename()), () -> {
-                            return;
-                        });
-                fileUpload.setStatus(gridFSFile.getMetadata().get(Constants.STATUS).toString());
-                fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
-                fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
-                fileUploads.add(fileUpload);
-            }
+            FileUpload fileUpload = new FileUpload();
+            fileUpload.setId(gridFSFile.getObjectId().toString());
+            fileRepository.findByFileId(fileUpload.getId())
+                    .ifPresent(file -> fileUpload.setFilename(file.getFilename()));
+            fileUpload.setStatus(gridFSFile.getMetadata().get(Constants.STATUS).toString());
+            fileUpload.setFileType(gridFSFile.getMetadata().get(Constants.CONTENTTYPE).toString());
+            fileUpload.setFileSize(gridFSFile.getMetadata().get(Constants.FILESIZE).toString());
+            fileUploads.add(fileUpload);
         });
         FileService.log.info("Displaying list of files for user {}", userDetails.getUsername());
         return fileUploads;
@@ -107,23 +103,20 @@ public class FileService {
         FileUpload fileUpload = new FileUpload();
         try {
             GridFSFile gridFSFile = gridFSFileOptional.get();
-            if (gridFSFile.getMetadata() != null) {
-                Document metadata = gridFSFile.getMetadata();
+            Document metadata = gridFSFile.getMetadata();
 
-                fileRepository.findByFileId(id).ifPresentOrElse(file -> fileUpload.setFilename(file.getFilename()),
-                        () -> fileUpload.setFilename(gridFSFile.getFilename()));
-                fileUpload.setId(id);
-                fileUpload.setFileType(metadata.get(Constants.CONTENTTYPE).toString());
-                fileUpload.setStatus(metadata.get(Constants.STATUS).toString());
-                fileUpload.setFileSize(metadata.get(Constants.FILESIZE).toString());
+            fileRepository.findByFileId(id).ifPresent(file -> fileUpload.setFilename(file.getFilename()));
+            fileUpload.setId(id);
+            fileUpload.setFileType(metadata.get(Constants.CONTENTTYPE).toString());
+            fileUpload.setStatus(metadata.get(Constants.STATUS).toString());
+            fileUpload.setFileSize(metadata.get(Constants.FILESIZE).toString());
 
-                if (userDetails.getId().equals(metadata.get(Constants.OWNER).toString())) {
-                    fileUpload.setFile(IOUtils.toByteArray(operations.getResource(gridFSFile).getInputStream()));
-                } else {
-                    FileService.log.error("Attempt to download file {} from user {}",
-                            fileUpload.getFilename(), userDetails.getUsername());
-                    throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
-                }
+            if (userDetails.getId().equals(metadata.get(Constants.OWNER).toString())) {
+                fileUpload.setFile(IOUtils.toByteArray(operations.getResource(gridFSFile).getInputStream()));
+            } else {
+                FileService.log.error("Attempt to download file {} from user {}",
+                        fileUpload.getFilename(), userDetails.getUsername());
+                throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
             }
             FileService.log.info("File {} downloaded", fileUpload.getFilename());
         } catch (NoSuchElementException npe) {
@@ -176,13 +169,13 @@ public class FileService {
         return "File with id: " + id + " was deleted successfully";
     }
 
-    public UserDetailsImpl getUser(String id) throws FileForbiddenException{
-        try{
+    public UserDetailsImpl getUser(String id) throws FileForbiddenException {
+        try {
             return (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                     .getPrincipal();
-                }catch(NullPointerException npe){
-                    throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
-                }
+        } catch (NullPointerException npe) {
+            throw new FileForbiddenException(Constants.FORBIDDENFILE + id);
+        }
     }
 
 
