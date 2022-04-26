@@ -80,11 +80,11 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (signUpRequest.getUsername() != null && userRepository.existsByUsername(signUpRequest.getUsername())) {
+        if (Boolean.TRUE.equals(userRepository.existsByUsername(signUpRequest.getUsername()))) {
             return ResponseEntity.badRequest()
                     .body(new MessageResponse(HttpStatus.CONFLICT, "Username exists!"));
         }
-        if (signUpRequest.getUsername() != null && userRepository.existsByEmail(signUpRequest.getEmail())) {
+        if (Boolean.TRUE.equals(userRepository.existsByEmail(signUpRequest.getEmail()))) {
             return ResponseEntity.badRequest()
                     .body(new MessageResponse(HttpStatus.CONFLICT, "Email exists!"));
         }
@@ -122,9 +122,7 @@ public class AuthController {
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication()
                 .getPrincipal();
         ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
-        if (userDetails != null) {
-            AuthController.log.info("User {} logout", userDetails.getUsername());
-        }
+        AuthController.log.info("User {} logout", userDetails.getUsername());
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
                 .body(new MessageResponse(HttpStatus.OK, "You've been logout!"));
     }

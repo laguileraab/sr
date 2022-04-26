@@ -6,9 +6,6 @@ import com.ce.sr.models.FileMetadata;
 import com.ce.sr.payload.response.FileUpload;
 import com.ce.sr.repository.FileRepository;
 import com.ce.sr.services.FileService;
-import com.ce.sr.utils.Constants;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DBObject;
 import com.mongodb.client.gridfs.model.GridFSFile;
 
 import org.junit.jupiter.api.AfterEach;
@@ -16,16 +13,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.gridfs.GridFsOperations;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.security.test.context.support.WithUserDetails;
-import org.springframework.transaction.annotation.Transactional;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -38,7 +30,6 @@ import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Optional;
 
-
 @WithUserDetails("user")
 @SpringBootTest
 public class FileServiceTests {
@@ -48,9 +39,6 @@ public class FileServiceTests {
 
 	@Autowired
 	private GridFsTemplate template;
-
-	@Autowired
-	private GridFsOperations operations;
 
 	@Autowired
 	private FileService fileService;
