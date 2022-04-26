@@ -18,10 +18,13 @@
 </p>
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0;
-    <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
+    <a href="#white_check_mark-requirements-for-compilation">Requirements</a> &#xa0; | &#xa0;
     <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#sparkles-features">Usage</a> &#xa0; | &#xa0;
+  <a href="#sparkles-usage-of-the-app">Usage</a> &#xa0; | &#xa0;
+    <a href="#test_tube-perform-tests">Tests</a> &#xa0; | &#xa0;
+  <a href="#heavy_check_mark-run-with-docker">Docker</a> &#xa0; | &#xa0;
+  <a href="https://test-engineers.herokuapp.com">Heroku</a> &#xa0; | &#xa0;
   <a href="https://github.com/laguileraab" target="_blank">Author</a>
 </p>
 
@@ -33,7 +36,7 @@ In this project i made an REST API that allow you to upload a file and download 
 
 The files are stored for a specific user and is necessary to be authenticated first with a previously sign up user.
 
-## :white_check_mark: Requirements for compilation ##
+## :white_check_mark: Requirements for compilation <a name = "requirement"></a>
 
 You need to have Java >= 17 and Maven installed in order to run this project. Check if you have install it already with:
 
@@ -47,7 +50,7 @@ Maven
 mvn --version
 ```
 
-## :rocket: Technologies ##
+## :rocket: Technologies <a name = "tech"></a>
 
 The following tools were used in this project:
 
@@ -56,7 +59,7 @@ The following tools were used in this project:
 - [MongoDB](https://www.mongodb.com/)
 
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Starting ## <a name = "starting"></a>
 We need to install maven dependencies and test will failed in this part, thats why we skip them because it needs to be created a connection database and User "user" for testing. [See here](https://docs.spring.io/spring-security/site/docs/5.0.x/reference/html/test-method.html#test-method-withuserdetails)
 
 
@@ -132,7 +135,7 @@ After that you can go to Jacoco site for review the Code Coverage of the tests i
 ./site/index.html
 ```
 
-## :sparkles: Usage of the app ##
+## :sparkles: Usage of the app <a name = "usage"></a>
 
 In the project is been added Swagger 3 for documentation of the API, this allows also to perform test in the web application and an understanding of the required objects for every endpoint.
 
@@ -207,7 +210,7 @@ curl --location --request DELETE 'localhost/api/file/6266997946953816f3f4d05b' \
 
 ```
 
-## :heavy_check_mark: Run with Docker ##
+## :heavy_check_mark: Run with Docker <a name = "docker"></a>
 
 In the project is a Dockerfile to dockerize the Spring Boot application and a Docker Composer file v3 for Docker deployment. You can be setup in one line:
 
@@ -225,10 +228,10 @@ and everything must be UP.
 
 :triangular_flag_on_post: Important!
 
-Also this project is currently deployed on [Heroku](https://test-engineers.herokuapp.com)
+Also this project is currently deployed on [Heroku](https://test-engineers.herokuapp.com) and the database in MongoDB Atlas.
 
 
-## ✍️ Author <a name = "authors"></a>
+## ✍️ Author <a name = "author"></a>
 
 - [@laguileraab](https://github.com/laguileraab)
 
